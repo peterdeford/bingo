@@ -1,0 +1,81 @@
+<html>
+
+<head>
+	<title>Scott Sermon Bingo</title>
+	<script type="text/javascript">
+		function set_bingo () {
+			var cells = [
+				"If you're here...the invitation is",
+			    "Word of the day",
+			    "Orioles",
+			    "Oldies song lyrics",
+			    "Quote by other pastor",
+			    "The Greek word",
+			    "Gos-full",
+			    "Funny voice",
+			    "Mentions Social Media",
+			    "Stoops or Rooftop decks",
+			    "Pop culture reference",
+			    "Ravens",
+			//    "FREE",
+			]
+
+			function shuffle(array) {
+			  var currentIndex = array.length, temporaryValue, randomIndex;
+
+			  // While there remain elements to shuffle...
+			  while (0 !== currentIndex) {
+
+			    // Pick a remaining element...
+			    randomIndex = Math.floor(Math.random() * currentIndex);
+			    currentIndex -= 1;
+
+			    // And swap it with the current element.
+			    temporaryValue = array[currentIndex];
+			    array[currentIndex] = array[randomIndex];
+			    array[randomIndex] = temporaryValue;
+			  }
+
+			  return array;
+			}
+			var shuffed = shuffle(cells);
+
+			for (i = 1; i < 4; i++) {
+					for (j = 1; j < 4; j++) {
+			    		var id = "td"+i.toString()+j.toString()
+						document.getElementById(id).innerHTML = shuffed[(i-1)+(j-1)*4];
+			    }
+			}
+			document.getElementById("td33").innerHTML = shuffed[(2-1)+(2-1)*4]
+			document.getElementById("td22").innerHTML = "FREE"
+		}
+	</script>
+	<script type="text/javascript">
+		function shade (elmnt) {
+			elmnt.style.backgroundColor = "red";
+		}
+	</script>
+</head>
+
+<body onload="set_bingo();" style="font-family:'Trebuchet MS', Helvetica, sans-serif">
+	<h1 style="text-align: center;">Scott Sermon Bingo</h1>
+	<table style="border: 1px solid black; margin: auto">
+	    <tr>
+	        <td id="td11" style="height:100px; width:100px; text-align:center; border: 1px solid black;" onclick="shade(this)">.</td>
+	        <td id="td12" style="height:100px; width:100px; text-align:center; border: 1px solid black;" onclick="shade(this)">.</td>
+	        <td id="td13" style="height:100px; width:100px; text-align:center; border: 1px solid black;" onclick="shade(this)">.</td>
+	    </tr>
+	    <tr>
+	        <td id="td21" style="height:100px; width:100px; text-align:center; border: 1px solid black;" onclick="shade(this)">.</td>
+	        <td id="td22" style="height:100px; width:100px; text-align:center; border: 1px solid black;" onclick="shade(this)">.</td>
+	        <td id="td23" style="height:100px; width:100px; text-align:center; border: 1px solid black;" onclick="shade(this)">.</td>
+	    </tr>
+	    <tr>
+	        <td id="td31" style="height:100px; width:100px; text-align:center; border: 1px solid black;" onclick="shade(this)">.</td>
+	        <td id="td32" style="height:100px; width:100px; text-align:center; border: 1px solid black;" onclick="shade(this)">.</td>
+	        <td id="td33" style="height:100px; width:100px; text-align:center; border: 1px solid black;" onclick="shade(this)">.</td>
+	    </tr>
+
+	</table>
+</body>
+</html>
